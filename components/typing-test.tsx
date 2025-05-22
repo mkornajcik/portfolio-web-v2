@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function TypingTest() {
+export default function TypingTest({ flipped }: { flipped?: boolean }) {
   const sentence = "The quick brown fox jumps over the lazy dog.";
   const totalChars = sentence.length;
 
@@ -121,7 +121,7 @@ export default function TypingTest() {
       "
         >
           <img
-            src={legToggle ? "/bongo1.png" : "/bongo2.png"}
+            src={flipped ? "/bongo3.png" : legToggle ? "/bongo1.png" : "/bongo2.png"}
             alt="Bongo Cat"
             className="w-42 h-42 relative transform rotate-347 z-0"
           />

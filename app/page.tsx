@@ -592,7 +592,7 @@ export default function Home() {
           </section>
 
           <section id="typing">
-            <TypingTest />
+            <TypingTest flipped={flipped} />
           </section>
 
           <section id="projects" className="mb-16">
