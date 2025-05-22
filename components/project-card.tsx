@@ -32,12 +32,10 @@ export default function ProjectCard({ project }: ProjectProps) {
       {!project.title && (
         <div className="flex justify-center content-center">
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/mkornajcik?tab=repositories">
-            <h3 className="text-xl font-semibold text-[#89b4fa] hover:shadow-xl">More projects →</h3>
+            <h3 className="text-xl font-semibold text-[#89b4fa] hover:shadow-sm">More projects →</h3>
           </a>
         </div>
       )}
-      {/* TODO: Fix this image, the quality is bad, consider using 1x, 2x, 3x sizes for the picture, add some on hover upsizing etc. */}
-
       <div className="flex flex-col group relative mb-3 w-full">
         {project.image && (
           <div className="group relative rounded-lg w-full">
