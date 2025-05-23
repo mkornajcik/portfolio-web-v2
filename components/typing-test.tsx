@@ -106,7 +106,7 @@ export default function TypingTest({ flipped }: { flipped?: boolean }) {
           onBlur={handleBlur}
           disabled={isFinished}
           className="relative w-full p-2 rounded-md focus:outline-none bg-[#1e1e2e]"
-          placeholder="Start typing here..."
+          placeholder="Test your speed!"
         />
 
         <div
