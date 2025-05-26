@@ -32,7 +32,9 @@ export default function ProjectCard({ project }: ProjectProps) {
       {!project.title && (
         <div className="flex justify-center content-center">
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/mkornajcik?tab=repositories">
-            <h3 className="text-xl font-semibold text-[#89b4fa] hover:shadow-sm">More projects →</h3>
+            <h3 className="text-xl font-semibold text-[#89b4fa] hover:scale-105 transition hover:opacity-70">
+              More projects →
+            </h3>
           </a>
         </div>
       )}
