@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Github, ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ProjectProps {
