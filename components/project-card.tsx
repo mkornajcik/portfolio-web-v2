@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { Github, ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { div } from "framer-motion/client";
 
 interface ProjectProps {
   project: {

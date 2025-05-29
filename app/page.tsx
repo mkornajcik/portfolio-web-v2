@@ -292,7 +292,7 @@ export default function Home() {
                           <defs>
                             <pattern id="avatarPattern" patternUnits="userSpaceOnUse" width="250" height="250">
                               <image
-                                href="/avatar.png"
+                                href="/avatar.webp"
                                 x="0"
                                 y="0"
                                 width="250"
@@ -330,7 +330,7 @@ export default function Home() {
                           <defs>
                             <pattern id="avatarPattern2" patternUnits="userSpaceOnUse" width="250" height="250">
                               <image
-                                href="/backend.png"
+                                href="/backend.webp"
                                 x="0"
                                 y="0"
                                 width="250"
