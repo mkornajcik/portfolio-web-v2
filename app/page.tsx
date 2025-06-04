@@ -1,4 +1,5 @@
 "use client";
+
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import ProjectCard from "@/components/project-card";
 import SkillBadge from "@/components/skill-badge";
@@ -7,6 +8,7 @@ import SectionTitle from "@/components/section-title";
 import ParticlesComponent from "../components/particles";
 import React, { useRef, useState, useMemo, useEffect } from "react";
 import TypingTest from "@/components/typing-test";
+import FlipAvatar from "@/components/avatar-flip";
 
 export default function Home() {
   const technologies = ["TypeScript", "JavaScript", "Node.js", "Express", "HTML5", "CSS", "Railway", "Prisma"];
@@ -56,12 +58,15 @@ export default function Home() {
     if (flipped) {
       clearTimeout(initialTimer.current);
       clearTimeout(loopTimer.current);
+      setProgressStarted(false);
     }
   }, [flipped]);
 
   // Start progress animation on hover
   const handleMouseEnter = () => {
-    setProgressStarted(true);
+    if (!flipped) {
+      setProgressStarted(true);
+    }
   };
 
   // Reset everything on mouse leave
@@ -262,106 +267,15 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative w-48 h-48">
-                {notify && !flipped && (
-                  <span
-                    className="absolute inset-5 rounded-full ring-1 ring-[#cba6f7] animate-ping"
-                    onAnimationEnd={handlePingEnd}
-                  />
-                )}
-
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#cba6f7]">
-                  <div
-                    className={`flip-container${flipped ? " hover" : ""}`}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <div className="flipper">
-                      <div className="front">
-                        <svg
-                          width="192"
-                          height="192"
-                          viewBox="5 5 250 250"
-                          className="circular-progress"
-                          style={{
-                            animation: progressStarted && !flipped ? "progress-animation 1s linear forwards" : "none",
-                            opacity: 1,
-                          }}
-                          onAnimationEnd={handleProgressAnimationEnd}
-                        >
-                          <defs>
-                            <pattern id="avatarPattern" patternUnits="userSpaceOnUse" width="250" height="250">
-                              <image
-                                href="/avatar.webp"
-                                x="0"
-                                y="0"
-                                width="250"
-                                height="250"
-                                preserveAspectRatio="xMidYMid slice"
-                                className="z-50"
-                              />
-                            </pattern>
-                          </defs>
-                          <circle cx="120" cy="120" r="120" fill="url(#avatarPattern)" className="avatar" />
-                          <circle
-                            cx="120"
-                            cy="120"
-                            r="120"
-                            className="fg"
-                            fill="none"
-                            strokeWidth="10"
-                            strokeDasharray="754"
-                            strokeDashoffset="188.5"
-                          />
-                        </svg>
-                      </div>
-                      <div className="back">
-                        <svg
-                          width="192"
-                          height="192"
-                          viewBox="5 5 250 250"
-                          className="circular-progress"
-                          style={{
-                            animation: progressStarted && !flipped ? "progress-animation 1s linear forwards" : "none",
-                            opacity: 1,
-                          }}
-                          onAnimationEnd={handleProgressAnimationEnd}
-                        >
-                          <defs>
-                            <pattern id="avatarPattern2" patternUnits="userSpaceOnUse" width="250" height="250">
-                              <image
-                                href="/backend.webp"
-                                x="0"
-                                y="0"
-                                width="250"
-                                height="250"
-                                preserveAspectRatio="xMidYMid slice"
-                                className="z-50"
-                              />
-                            </pattern>
-                          </defs>
-                          <circle cx="120" cy="120" r="120" fill="url(#avatarPattern2)" className="avatar" />
-                          <circle
-                            cx="120"
-                            cy="120"
-                            r="120"
-                            className="fg"
-                            fill="none"
-                            strokeWidth="10"
-                            strokeDasharray="754"
-                            strokeDashoffset="188.5"
-                          />
-                        </svg>
-                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-                          <h2 className="text-xl font-bold text-[#f5c2e7] bg-black/60 rounded shadow-lg mx-5.5">
-                            Backend
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <FlipAvatar
+                notify={notify}
+                flipped={flipped}
+                handlePingEnd={handlePingEnd}
+                handleMouseEnter={handleMouseEnter}
+                handleMouseLeave={handleMouseLeave}
+                handleProgressAnimationEnd={handleProgressAnimationEnd}
+                progressStarted={progressStarted}
+              />
             </div>
 
             <div className="mt-12" id="favorite-tech">

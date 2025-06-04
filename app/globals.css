@@ -113,8 +113,19 @@ img {
   opacity: 0;
 }
 
-.circular-progress:hover circle.bg,
+/* .circular-progress:hover circle.bg,
 .circular-progress:hover circle.fg {
+  opacity: 1;
+} */
+
+.circular-progress circle.bg,
+.circular-progress circle.fg {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.circular-progress.progress-visible circle.bg,
+.circular-progress.progress-visible circle.fg {
   opacity: 1;
 }
 
