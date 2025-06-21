@@ -113,6 +113,7 @@ export default function Home() {
       { name: "SQLite", icon: "sqlite.svg" },
       { name: "Prisma", icon: "prisma.svg" },
       { name: "Supabase", icon: "supabase.svg" },
+      { name: "Redis", icon: "redis.svg" },
     ],
     "APIs & Authentication": [
       { name: "RESTful APIs", icon: "api.svg" },
@@ -123,11 +124,20 @@ export default function Home() {
     "Development & Deployment": [
       { name: "Git", icon: "git.svg" },
       { name: "GitHub", icon: "github.svg" },
+      { name: "GitLab", icon: "gitlab.svg" },
       { name: "Postman", icon: "postman.svg" },
       { name: "Railway", icon: "railway.svg" },
       { name: "Socket.io", icon: "socketio.svg" },
       { name: "Docker", icon: "docker.svg" },
       { name: "AWS S3", icon: "aws.svg" },
+    ],
+    Testing: [
+      { name: "Jest", icon: "jest.svg" },
+      { name: "SuperTest", icon: "test.svg" },
+    ],
+    "Front-End / Styling": [
+      { name: "Tailwind", icon: "tailwind.svg" },
+      { name: "Bootstrap", icon: "bootstrap.svg" },
     ],
   };
 
@@ -161,6 +171,27 @@ export default function Home() {
       github: "https://github.com/mkornajcik/natours",
       demo: "https://appnatours.up.railway.app/",
       image: "Natours.png",
+    },
+    {
+      title: "Leaguele",
+      description: "A Wordle style League of Legends game.",
+      technologies: [
+        "Node.js",
+        "Express",
+        "TypeScript",
+        "JavaScript",
+        "EJS",
+        "Tailwind",
+        "Redis",
+        "Jest",
+        "Supertest",
+        "GitLab",
+        "Docker",
+        "Railway",
+      ],
+      github: "https://github.com/mkornajcik/leaguele",
+      demo: "https://leaguele.up.railway.app/",
+      image: "leaguele.png",
     },
     {
       title: "",
@@ -232,7 +263,7 @@ export default function Home() {
 
                 <div className="flex flex-wrap gap-4 mt-8">
                   <a
-                    href="/resume.pdf"
+                    href="/Marko_Kornajcik_Backend_Resume.pdf"
                     className="flex items-center gap-2 px-4 py-2 bg-[#cba6f7] text-[#1e1e2e] rounded-md hover:bg-[#f5c2e7] transition-colors"
                     download
                   >
