@@ -57,7 +57,7 @@ const FlipAvatar: React.FC<FlipAvatarProps> = ({
               <CircularAvatar
                 imageId="avatarPattern"
                 imgSrc={AVATAR_SRC}
-                alt="Marko photo"
+                alt="Photo"
                 onAnimationEnd={handleProgressAnimationEnd}
                 progressStarted={progressStarted && !flipped}
                 flipped={flipped}
@@ -67,7 +67,7 @@ const FlipAvatar: React.FC<FlipAvatarProps> = ({
               <CircularAvatar
                 imageId="avatarPattern2"
                 imgSrc={BACKEND_SRC}
-                alt="Backend avatar"
+                alt="Avatar"
                 onAnimationEnd={handleProgressAnimationEnd}
                 progressStarted={progressStarted && !flipped}
               />
