@@ -132,24 +132,30 @@ export default function TypingTest({ flipped }: { flipped?: boolean }) {
         {!isFinished ? (
           <>
             <div className="text-xs">
-              <kbd className="rounded border px-1">TAB</kbd>- restart
+              <kbd className="rounded border px-1">TAB</kbd> - restart
             </div>
+
             <div className="text-xs">
-              <p>{elapsed.toFixed(1)}s</p>
+              <p className="text-center align-middle">{elapsed.toFixed(1)}s</p>
             </div>
           </>
         ) : (
           <>
-            <div className="text-xs">
-              <p>Total Time: {elapsed.toFixed(2)}s</p>
+            <div className="text-xs mb-0">
+              <p className="text-center align-middle">Total Time: {elapsed.toFixed(2)}s</p>
             </div>
-            <div className="text-xs">
-              <p onClick={handleRestart} className="cursor-pointer hover:text-[#cba6f7] transition hover:scale-115">
+
+            <div className="text-x mb-0">
+              <p
+                onClick={handleRestart}
+                className="cursor-pointer hover:text-[#cba6f7] transition hover:scale-115 text-center align-middle"
+              >
                 Try again?
               </p>
             </div>
-            <div className="text-xs">
-              <p>WPM: {calculateWPM()}</p>
+
+            <div className="text-xs mb-0">
+              <p className="text-center align-middle">WPM: {calculateWPM()}</p>
             </div>
           </>
         )}
