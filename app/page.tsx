@@ -578,7 +578,7 @@ export default function Home() {
         </article>
 
         <footer className="text-center py-6 text-[#a6adc8] border-t border-[#313244]">
-          <p>© {new Date().getFullYear()} Marko Kornajcik.</p>
+          <p>© {new Date().getFullYear()} Marko Kornajcik</p>
         </footer>
       </div>
     </main>
